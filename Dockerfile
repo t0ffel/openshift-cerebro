@@ -6,7 +6,7 @@ EXPOSE 9000
 USER 0
 
 ENV HOME=/opt/app-root \
-    APP_VERSION=0.6.5
+    APP_VERSION=0.7.3
 
 RUN mkdir -p ${HOME}
 WORKDIR ${HOME}

@@ -16,7 +16,7 @@ objects:
         name: openshift-cerebro:latest
     source:
       git:
-        uri: https://github.com/jcantrill/openshift-cerebro
+        uri: https://github.com/t0ffel/openshift-cerebro
       type: Git
     strategy:
       dockerStrategy:
