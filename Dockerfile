@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk
+FROM centos:centos7
 
 MAINTAINER OpenShift Development <dev@lists.openshift.redhat.com>
 
@@ -6,7 +6,15 @@ EXPOSE 9000
 USER 0
 
 ENV HOME=/opt/app-root \
-    APP_VERSION=0.7.3
+    JAVA_VER=1.8.0 \
+    APP_VERSION=0.7.3 \
+    CEREBRO_CONF=/etc/cerebro/config
+
+RUN yum install -y --setopt=tsflags=nodocs \
+                java-1.8.0-openjdk-headless \
+                && \
+	yum update -y && \
+    yum clean all
 
 RUN mkdir -p ${HOME}
 WORKDIR ${HOME}
