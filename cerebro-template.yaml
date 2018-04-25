@@ -21,8 +21,8 @@ objects:
     strategy:
       dockerStrategy:
         from:
-          kind: ImageStreamTag
-          name: openjdk:8-jdk
+          kind: DockerImage
+          name: centos:centos7
       type: Docker
     triggers:
     - type: ConfigChange
@@ -32,12 +32,6 @@ objects:
     labels:
       build: openshift-cerebro
     name: openshift-cerebro
-- apiVersion: v1
-  kind: ImageStream
-  metadata:
-    labels:
-      build: openshift-cerebro
-    name: openjdk
 - apiVersion: v1
   kind: Service
   metadata:
